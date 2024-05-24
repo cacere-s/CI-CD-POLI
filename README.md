@@ -2,7 +2,9 @@
 ## Politécnico Grancolombiano
 ### Integrantes
 Julio Cesar Romaña Caceres
+
 Fabian Alexis Florez Convers
+
 Joffred Alexander Mendez Rodriguez
 
 `JavaScript` `Node` `Express` `MySql`  `Sequelize`
