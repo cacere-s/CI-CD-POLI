@@ -7,7 +7,7 @@ Fabian Alexis Florez Convers
 
 Joffred Alexander Mendez Rodriguez
 
-`JavaScript` `Node` `Express` `MySql`  `Sequelize`
+`JavaScript` `Node` `Express` `MySql`
 
 >**Docker 1** - Backend 
 >- Node, Express
