@@ -1,18 +1,13 @@
-import express from 'express';
-const route = express.Router()
+import express from "express";
+import { createUser, users } from "../controllers/userController.js";
+const route = express.Router();
 
-route.get('/user', (req, res) => {
-    res.send('Usuario')
-  })
+route.get("/user", users);
 
-  route.post('/create', (req, res) => {
-    res.send('Crear Usuario')
-  })
+route.post("/create", createUser);
 
-  route.post('/login', (req, res) => {
-    res.send('iniciar sesion')
-  })
+route.post("/login", (req, res) => {
+  res.send("iniciar sesion");
+});
 
-  export default route
-
-
+export default route;
