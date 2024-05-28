@@ -1,0 +1,17 @@
+# Usa la imagen base oficial de MySQL
+FROM mysql:latest
+
+# Establece variables de entorno para la contraseña root y otras configuraciones de MySQL
+ENV MYSQL_ROOT_PASSWORD=my-secret-pw
+ENV MYSQL_DATABASE=mydatabase
+ENV MYSQL_USER=myuser
+ENV MYSQL_PASSWORD=mypassword
+
+# Copia el script de inicialización a la carpeta de inicialización de MySQL
+COPY init-db.sql /docker-entrypoint-initdb.d/
+
+# Exponer el puerto MySQL
+EXPOSE 3307
+
+# El comando por defecto para ejecutar MySQL
+CMD ["mysqld"]
