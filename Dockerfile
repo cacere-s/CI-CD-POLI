@@ -2,7 +2,7 @@
 FROM node:22.2.0-alpine3.20
 
 # Actualiza e instala dependencias necesarias
-RUN apk update && apk upgrade
+RUN apk update && apk upgrade && apk add busybox-extras
 
 # Crea un usuario y grupo no root
 RUN addgroup -S poli && adduser -S ci-cd -G poli
@@ -18,9 +18,6 @@ USER ci-cd
 
 # Instala las dependencias del proyecto
 RUN npm install
-
-# Exponer el puerto que la aplicación usa (ajusta según sea necesario)
-EXPOSE 8080
 
 # Comando para ejecutar la aplicación
 CMD ["npm", "run", "dev"]
