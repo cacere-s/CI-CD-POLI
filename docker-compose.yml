@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  app-cicd:
+    build: .
+    container_name: app-poli
+    ports:
+      - "8080:8080"
+    links:
+      - mysql-poli
+    env_file:
+      - .env
+
+  mysql-poli:
+    image: mysql
+    container_name: database-poli
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678
+      - MYSQL_DATABASE=apipoli
+
+  jenkins-poli:
+    image: jenkins/jenkins
+    container_name: jenkins-poli
+    ports:
+      - "8000:8080"
+    

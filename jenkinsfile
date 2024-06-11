@@ -1,0 +1,18 @@
+pipeline {
+  agent any 
+  
+  stages {
+    stage('docker build') {
+      script {
+        sh "docker build -t poli/app-api:1.0.0 ."
+      }
+    }
+  }
+  stages {
+    stage('docker push') {
+      script {
+        sh "docker push poli/app-api:1.0.0"
+      }
+    }
+  }
+}

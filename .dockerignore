@@ -1,7 +1,5 @@
-.env
 Dockerfile
 .git/
 .gitignore
 .dockerignore
 README.md
-DockerFiledb
