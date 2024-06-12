@@ -3,16 +3,18 @@ pipeline {
   
   stages {
     stage('docker build') {
-      script {
-        sh "docker build -t poli/app-api:1.0.0 ."
-      }
+      steps {
+        script {
+          sh "docker build -t poli/app-api:1.0.0 ."
+        }
+      }  
     }
-  }
-  stages {
     stage('docker container') {
-      script {
-        sh "docker create -p 8081:8080 --name cicd-poli poli/app-api:1.0.0"
+      steps {
+        script {
+          sh "docker create -p 8081:8080 --name cicd-poli poli/app-api:1.0.0"
+        }
       }
     }
-  }
+  }   
 }
