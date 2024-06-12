@@ -9,9 +9,9 @@ pipeline {
     }
   }
   stages {
-    stage('docker push') {
+    stage('docker container') {
       script {
-        sh "docker push poli/app-api:1.0.0"
+        sh "docker create -p 8081:8080 --name cicd-poli poli/app-api:1.0.0"
       }
     }
   }
