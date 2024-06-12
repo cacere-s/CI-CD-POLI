@@ -13,7 +13,7 @@ const importData = async () => {
   process.exit()
   
  } catch (error) {
-  console.log('error al importar los datos')
+  console.log('error al importar los datos', error)
   process.exit(1)
  } 
 }

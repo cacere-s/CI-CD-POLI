@@ -13,7 +13,7 @@ const corsOption = {
 app.use(cors(corsOption))
 
 try {
-  await database.authenticate(app)
+  await database.authenticate()
   console.log("database connection successful")
 } catch (error) {
   console.log("database connection failed") 
@@ -24,7 +24,7 @@ import userRouter from './routes/userRouter.js'
 
 
 // middlewar imports
-app.use('/api/v1/auth', userRouter)
+app.use('/v1/auth', userRouter)
 
 const PORT = process.env.PORT || 8080
 
